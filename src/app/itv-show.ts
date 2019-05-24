@@ -1,7 +1,7 @@
 export interface ITvShow {
     name: string
     description: string
-    episode: number
+    seasonEpisode: string
     cast: string
     image: string
     schedule: string
