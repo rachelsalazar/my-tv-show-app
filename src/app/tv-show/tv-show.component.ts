@@ -13,7 +13,6 @@ export class TvShowComponent implements OnInit {
       name: 'Bless this Mess',
       image: '',
       description: 'After dropping everything to make the move from skyscrapers to farmhouses, Rio and Mike soon realize that the simpler life isnt as easy as they planned.',
-      seasonEpisode: 'Season 1, Episode 1',
       cast: 'Lake Bell, Dax Shepard, Ed Begley Jr., Pam Greer',
       schedule: 'Tuesdays at 8:30CT'
     }
