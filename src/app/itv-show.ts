@@ -1,7 +1,7 @@
 export interface ITvShow {
     name: string
-    description: string
-    cast: string
     image: string
+    description: string
     schedule: string
+    rating: number
 }
