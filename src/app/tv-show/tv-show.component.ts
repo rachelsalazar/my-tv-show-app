@@ -8,12 +8,12 @@ import { TvShowService } from './tv-show.service';
   styleUrls: ['./tv-show.component.css']
 })
 export class TvShowComponent implements OnInit {
-  show: ITvShow
+  tvShow: ITvShow
   constructor(private tvShowService: TvShowService) {
     
   }
 
   ngOnInit() {
+    this.tvShowService.getTvShow('bless/this/mess').subscribe(data => this.tvShow = data);
   }
-
 }
