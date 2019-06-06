@@ -9,11 +9,13 @@ import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule, MatInputModule, MatButtonModule, MatToolbarModule, MatIconModule, MatCardModule} from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { TvShowSearchComponent } from './tv-show-search/tv-show-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TvShowComponent
+    TvShowComponent,
+    TvShowSearchComponent
   ],
   imports: [
     BrowserModule,
