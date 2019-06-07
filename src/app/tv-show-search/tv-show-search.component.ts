@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { TvShowService } from '../tv-show/tv-show.service';
 
 @Component({
   selector: 'app-tv-show-search',
@@ -9,9 +10,17 @@ import { FormControl } from '@angular/forms';
 export class TvShowSearchComponent implements OnInit {
   search = new FormControl()
 
-  constructor() { }
+  constructor(private tvShowService: TvShowService) { }
 
   ngOnInit() {
+    this.search.valueChanges.subscribe((searchValue : string) => {
+      if (searchValue) {
+        const userInput = searchValue.split(' ').map(s => s.trim());
+        this.tvShowService.getTvShow(userInput[0]).subscribe(data => console.log(data))
+      }
+    })
   }
 
 }
+
+//, userInput.length > 1 ? userInput[1] : undefined
