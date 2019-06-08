@@ -2,9 +2,9 @@
 <div style="text-align:center">
   <mat-toolbar>HERE IS YOUR SHOW</mat-toolbar>
   <div>
-    <app-tv-show-search></app-tv-show-search>
+    <app-tv-show-search (searchEvent)="doSearch($event)"></app-tv-show-search>
   </div>
   <mat-card>
-    <app-tv-show></app-tv-show>
+    <app-tv-show [tvShow]="tvShow"></app-tv-show>
   </mat-card>
 </div>
