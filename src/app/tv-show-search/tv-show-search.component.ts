@@ -15,13 +15,17 @@ export class TvShowSearchComponent implements OnInit {
 
   ngOnInit() {
     this.search.valueChanges.pipe(debounceTime(1000)).subscribe((searchValue : string) => {
-      if (searchValue) {
-        const userInput = searchValue.split(' ').map(s => s.trim());
-        this.tvShowService.getTvShow(userInput[0]).subscribe(data => console.log(data))
+      if (!this.search.invalid) {
+        if (searchValue) {
+          const userInput = searchValue.split(' ').map(s => s.trim());
+          this.tvShowService.getTvShow(userInput[0]).subscribe(data => console.log(data))
+        }
       }
     })
   }
-
+  getErrorMessage() {
+    return this.search.hasError('minlength') ? 'Type at least 3 characters.' : '';
+  }
 }
 
 //, userInput.length > 1 ? userInput[1] : undefined

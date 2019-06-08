@@ -2,5 +2,8 @@
   <mat-form-field>
     <mat-icon matPrefix>search</mat-icon>
     <input matInput placeholder="Enter name of show" aria-label="TV Show Name" [formControl]="search" />
+    <mat-error *ngIf="search.invalid">
+      {{getErrorMessage()}}
+    </mat-error>
   </mat-form-field>
 </form>
