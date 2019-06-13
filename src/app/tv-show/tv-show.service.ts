@@ -34,7 +34,7 @@ export class TvShowService {
     return {
       name: data.name,
       image: data.image.medium,
-      description: data.summary.replace(/(<([^>]+)>)/ig,""),
+      description: data.summary,
       schedule: data.schedule.days,
       rating: data.rating.average
     }
