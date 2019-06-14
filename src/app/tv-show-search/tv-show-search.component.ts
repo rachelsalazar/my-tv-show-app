@@ -14,7 +14,7 @@ export class TvShowSearchComponent implements OnInit {
 
   search = new FormControl('', [Validators.minLength(3)]) 
 
-  constructor() { }
+  constructor(private tvShowService: TvShowService) { }
 
   ngOnInit() {
     this.search.valueChanges.pipe(debounceTime(1000)).subscribe((searchValue : string) => {
@@ -27,5 +27,3 @@ export class TvShowSearchComponent implements OnInit {
     return this.search.hasError('minlength') ? 'Type at least 3 characters.' : '';
   }
 }
-
-//, userInput.length > 1 ? userInput[1] : undefined
