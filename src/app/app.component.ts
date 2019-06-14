@@ -17,8 +17,8 @@ export class AppComponent {
   }
   doSearch(searchValue) {
     if (searchValue) {
-      const userInput = searchValue.split(' ').map(s => s.trim());
-      this.tvShowService.getTvShow(userInput[0]).subscribe(data => this.tvShow = data)
+      const userInput = searchValue.split(' ').join('-');
+      this.tvShowService.getTvShow(userInput).subscribe(data => this.tvShow = data)
     }
   }
 }
